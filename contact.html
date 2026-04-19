@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - The Daily Loaf</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #fefaf5;
+            color: #2e241f;
+            line-height: 1.5;
+        }
+
+        header {
+            background: #fffaf3;
+            padding: 2rem 2rem 1rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #e5d9cc;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            color: #6b3e1c;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            color: #a05e2c;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #4a2c1a;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            border-bottom-color: #c67b3d;
+            color: #c67b3d;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #6b3e1c 0%, #a05e2c 100%);
+            min-height: 30vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .page-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .locations {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .location {
+            flex: 1;
+            min-width: 280px;
+            background: white;
+            border-radius: 28px;
+            padding: 2rem;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+            border: 1px solid #e8dacf;
+            transition: transform 0.2s;
+        }
+
+        .location:hover {
+            transform: translateY(-4px);
+        }
+
+        .location h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #6b3e1c;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2cfb5;
+            display: inline-block;
+        }
+
+        .location p {
+            color: #6b5a4e;
+            margin: 0.8rem 0;
+            line-height: 1.6;
+        }
+
+        .location strong {
+            color: #4a2c1a;
+        }
+
+        .location iframe {
+            margin-top: 1rem;
+            border-radius: 20px;
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+
+        .contact-form-section {
+            max-width: 800px;
+            margin: 2rem auto 4rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border: 1px solid #e8dacf;
+        }
+
+        .contact-form-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #6b3e1c;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #4a2c1a;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.95rem;
+            border: 1.5px solid #e5d5c4;
+            border-radius: 16px;
+            background: #fffefc;
+            transition: all 0.2s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #c67b3d;
+            box-shadow: 0 0 0 3px rgba(198,123,61,0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn {
+            width: 100%;
+            background: #c67b3d;
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .btn:hover {
+            background: #9f592a;
+            transform: scale(1.01);
+        }
+
+        .contact-info-bar {
+            max-width: 1000px;
+            margin: 2rem auto 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: #fff6ed;
+            border-radius: 24px;
+            padding: 1.5rem;
+            text-align: center;
+            flex: 1;
+            min-width: 180px;
+            border: 1px solid #e8dacf;
+        }
+
+        .info-card .emoji {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card h4 {
+            font-family: 'Playfair Display', serif;
+            color: #6b3e1c;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card p {
+            color: #6b5a4e;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: #2e241f;
+            color: #e9ddd0;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+        }
+
+        footer p {
+            margin: 0.3rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h2 {
+                font-size: 2.2rem;
+            }
+            .locations {
+                flex-direction: column;
+            }
+            .contact-form-section {
+                margin: 2rem 1rem;
+                padding: 1.5rem;
+            }
+            .contact-info-bar {
+                flex-direction: column;
+                align-items: center;
+            }
+            .info-card {
+                max-width: 280px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>The Daily Loaf</h1>
+            <p>Artisan Bakery & Cafe</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h2>Visit or Contact Us</h2>
+        </section>
+
+        <!-- Quick Contact Info Bar - No images needed -->
+        <div class="contact-info-bar">
+            <div class="info-card">
+                <div class="emoji">📞</div>
+                <h4>Call Us</h4>
+                <p>(03) 555 1234</p>
+            </div>
+            <div class="info-card">
+                <div class="emoji">✉️</div>
+                <h4>Email Us</h4>
+                <p>hello@thedailyloaf.co.nz</p>
+            </div>
+            <div class="info-card">
+                <div class="emoji">⏰</div>
+                <h4>Hours</h4>
+                <p>Mon-Fri: 7am-4pm<br>Sat-Sun: 8am-2pm</p>
+            </div>
+        </div>
+
+        <!-- Two locations -->
+        <section class="locations">
+            <div class="location">
+                <h3>📍 Main Bakery & Cafe</h3>
+                <p>123 Baker Street<br>
+                Christchurch Central<br>
+                Christchurch 8011</p>
+                <p><strong>🕐 Hours:</strong><br>
+                Mon-Fri: 7am - 4pm<br>
+                Sat-Sun: 8am - 2pm</p>
+                <p><strong>📞 Phone:</strong> (03) 555 1234</p>
+                <iframe src="https://maps.google.com/maps?q=Christchurch+Central+New+Zealand&z=15&output=embed" allowfullscreen></iframe>
+            </div>
+
+            <div class="location">
+                <h3>📍 Production Kitchen (Pickup Only)</h3>
+                <p>45 Miller Street<br>
+                Addington<br>
+                Christchurch 8024</p>
+                <p><strong>🕐 Hours:</strong><br>
+                Mon-Fri: 8am - 12pm (pickup only, no seating)</p>
+                <p><strong>📞 Phone:</strong> (03) 555 5678</p>
+                <iframe src="https://maps.google.com/maps?q=Addington+Christchurch+New+Zealand&z=15&output=embed" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-form-section">
+            <h3>Send Us a Message</h3>
+            <form action="https://formspree.io/f/your-form-id-here" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn">✉️ Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The Daily Loaf. All rights reserved.</p>
+        <p>123 Baker Street, Christchurch | (03) 555 1234 | hello@thedailyloaf.co.nz</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - The Daily Loaf</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #fefaf5;
+            color: #2e241f;
+            line-height: 1.5;
+        }
+
+        header {
+            background: #fffaf3;
+            padding: 2rem 2rem 1rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #e5d9cc;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            color: #6b3e1c;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            color: #a05e2c;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #4a2c1a;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            border-bottom-color: #c67b3d;
+            color: #c67b3d;
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/hero-bread.jpg') no-repeat center center/cover;
+            background-size: cover;
+            background-position: center 40%;
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .page-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .about-text {
+            flex: 2;
+            min-width: 280px;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #6b3e1c;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .about-text h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            color: #4f3a2c;
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 280px;
+            background: #f4ede5;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+            border: 1px solid #e5d5c4;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* New staff section */
+        .staff-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .staff-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #6b3e1c;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .staff-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .staff-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+            width: 300px;
+            border: 1px solid #e5d5c4;
+            transition: transform 0.2s;
+            text-align: center;
+        }
+
+        .staff-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .staff-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .staff-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #6b3e1c;
+            margin-top: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .staff-card p {
+            color: #a05e2c;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding: 0 1rem;
+        }
+
+        .values-section {
+            background: #fff6ed;
+            padding: 3rem 2rem;
+            margin: 2rem auto;
+            border-radius: 48px;
+            max-width: 1200px;
+        }
+
+        .values-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #6b3e1c;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .values-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem;
+            text-align: center;
+            flex: 1;
+            min-width: 220px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #e8dacf;
+            transition: transform 0.2s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #c67b3d;
+            margin-bottom: 0.75rem;
+        }
+
+        .value-card p {
+            color: #6b5a4e;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .btn-back {
+            display: inline-block;
+            background: #c67b3d;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.2s;
+            margin-top: 2rem;
+        }
+
+        .btn-back:hover {
+            background: #9f592a;
+            transform: scale(1.02);
+        }
+
+        footer {
+            background: #2e241f;
+            color: #e9ddd0;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+        }
+
+        footer p {
+            margin: 0.3rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            .page-header h2 {
+                font-size: 2.5rem;
+            }
+            .values-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .value-card {
+                max-width: 350px;
+                width: 100%;
+            }
+            .staff-card {
+                width: 260px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>The Daily Loaf</h1>
+            <p>Artisan Bakery & Cafe</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h2>Our Story</h2>
+        </section>
+
+        <section class="about-content">
+            <div class="about-text">
+                <h3>From Farmers' Market to Local Staple</h3>
+                <p>The Daily Loaf started in 2012 as a small stall at the Christchurch Farmers' Market. Every Saturday, we woke up at 3am to bake sourdough in a shared kitchen and sold out by 10am. People kept asking where they could find our bread during the week.</p>
+                
+                <p>In 2015, we opened our first brick-and-mortar shop on Baker Street. Today, we bake seven days a week and still use the same slow-fermentation method that made our sourdough famous.</p>
+
+                <h3>Our Mission</h3>
+                <p>To craft exceptional, wholesome baked goods that bring our community together. We use traditional methods and the finest local ingredients—no shortcuts, no preservatives.</p>
+
+                <h3>Our Vision</h3>
+                <p>To be the heart of the neighbourhood's daily rituals, known for quality, warmth, and sustainability.</p>
+            </div>
+            <div class="about-image">
+                <img src="img/croissant.jpg" alt="Our fresh croissants">
+            </div>
+        </section>
+
+        <!-- NEW STAFF SECTION with your staff.jpg image -->
+        <section class="staff-section">
+            <h3>Meet Our Amazing Team</h3>
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <img src="img/staff.jpg" alt="Our bakery staff">
+                    <h4>Our Bakery Family</h4>
+                    <p>Dedicated bakers & pastry chefs</p>
+                </div>
+                <div class="staff-card">
+                    <img src="img/sourdough.jpg" alt="Baker at work">
+                    <h4>Master Bakers</h4>
+                    <p>Over 50 years combined experience</p>
+                </div>
+                <div class="staff-card">
+                    <img src="img/coffee.jpg" alt="Coffee barista">
+                    <h4>Barista Team</h4>
+                    <p>Serving perfect brews daily</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section">
+            <h3>What We Believe</h3>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h4>🥖 Quality First</h4>
+                    <p>Only the finest Canterbury flour, free-range eggs, and locally churned butter make it into our kitchen.</p>
+                </div>
+                <div class="value-card">
+                    <h4>⏳ Traditional Methods</h4>
+                    <p>Long fermentation, hand-shaped loaves, and stone-hearth baking — just like the old world.</p>
+                </div>
+                <div class="value-card">
+                    <h4>🤝 Community</h4>
+                    <p>We donate day-old bread to local shelters and partner with Christchurch food rescue programs.</p>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="index.html" class="btn-back">← Back to Home</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The Daily Loaf. All rights reserved.</p>
+        <p>123 Baker Street, Christchurch | (03) 555 1234 | hello@thedailyloaf.co.nz</p>
+    </footer>
+
+</body>
+</html>

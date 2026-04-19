@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - The Daily Loaf</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #fefaf5;
+            color: #2e241f;
+            line-height: 1.5;
+        }
+
+        header {
+            background: #fffaf3;
+            padding: 2rem 2rem 1rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #e5d9cc;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            color: #6b3e1c;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            color: #a05e2c;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #4a2c1a;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            border-bottom-color: #c67b3d;
+            color: #c67b3d;
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/hero-bread.jpg') no-repeat center center/cover;
+            background-size: cover;
+            background-position: center;
+            min-height: 35vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .page-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+        }
+
+        .products-grid {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 12px 22px rgba(0,0,0,0.1);
+            transition: transform 0.25s ease, box-shadow 0.3s;
+            width: 320px;
+            border: 1px solid #f0e0cf;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 28px rgba(0,0,0,0.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #6b3e1c;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card p {
+            color: #6b5a4e;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .price {
+            font-weight: 700;
+            color: #c67b3d;
+            font-size: 1.3rem;
+            margin-top: 0.5rem;
+        }
+
+        .allergy-note {
+            background: #fff6ed;
+            text-align: center;
+            padding: 1.5rem;
+            margin: 1rem auto 3rem auto;
+            border-radius: 48px;
+            max-width: 800px;
+        }
+
+        .allergy-note p {
+            color: #6b5a4e;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: #2e241f;
+            color: #e9ddd0;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+        }
+
+        footer p {
+            margin: 0.3rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .product-card {
+                width: 280px;
+            }
+            .page-header h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>The Daily Loaf</h1>
+            <p>Artisan Bakery & Cafe</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h2>What We Bake</h2>
+            <p>Order by 9pm for next-day pickup</p>
+        </section>
+
+        <section class="products-grid">
+            <!-- Classic Sourdough -->
+            <div class="product-card">
+                <img src="img/classic-sourdough.jpg" alt="Classic Sourdough" onerror="this.src='img/sourdough.jpg'">
+                <div class="product-info">
+                    <h3>🍞 Classic Sourdough</h3>
+                    <p>Slow-fermented for 24 hours. Crispy crust, soft crumb.</p>
+                    <p class="price">R 85.00</p>
+                </div>
+            </div>
+
+            <!-- Rye Bread -->
+            <div class="product-card">
+                <img src="img/rye.jpg" alt="Rye Bread" onerror="this.src='img/sourdough.jpg'">
+                <div class="product-info">
+                    <h3>🌾 Rye Bread</h3>
+                    <p>Hearty, dense, and perfect with butter or cheese.</p>
+                    <p class="price">R 90.00</p>
+                </div>
+            </div>
+
+            <!-- Butter Croissant -->
+            <div class="product-card">
+                <img src="img/croissant.jpg" alt="Butter Croissant">
+                <div class="product-info">
+                    <h3>🥐 Butter Croissant</h3>
+                    <p>Flaky, buttery, and baked fresh each morning.</p>
+                    <p class="price">R 45.00</p>
+                </div>
+            </div>
+
+            <!-- Cinnamon Roll -->
+            <div class="product-card">
+                <img src="img/cinnamon.jpg" alt="Cinnamon Roll" onerror="this.src='img/croissant.jpg'">
+                <div class="product-info">
+                    <h3>🍥 Cinnamon Roll</h3>
+                    <p>Warm spice, cream cheese glaze. A customer favourite.</p>
+                    <p class="price">R 50.00</p>
+                </div>
+            </div>
+
+            <!-- Flat White - NOW USING coffee2.jpg -->
+            <div class="product-card">
+                <img src="img/coffee2.jpg" alt="Flat White" onerror="this.src='img/coffee.jpg'">
+                <div class="product-info">
+                    <h3>☕ Flat White</h3>
+                    <p>Locally roasted beans. Whole or oat milk available.</p>
+                    <p class="price">R 40.00</p>
+                </div>
+            </div>
+
+            <!-- Catering Box -->
+            <div class="product-card">
+                <img src="img/catering.jpg" alt="Catering Box" onerror="this.src='img/croissant.jpg'">
+                <div class="product-info">
+                    <h3>📦 Catering Box (6-8 people)</h3>
+                    <p>Mixed pastries, bread, and spreads. Perfect for meetings.</p>
+                    <p class="price">R 450.00</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="allergy-note">
+            <p><strong>Allergy Information:</strong> Our bakery handles wheat, dairy, eggs, and nuts. Please contact us if you have severe allergies.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The Daily Loaf. All rights reserved.</p>
+        <p>123 Baker Street, Christchurch | (03) 555 1234 | hello@thedailyloaf.co.nz</p>
+    </footer>
+
+</body>
+</html>
